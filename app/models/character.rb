@@ -10,7 +10,8 @@
 #  movie_id   :integer
 #
 class Character < ApplicationRecord
-  has_many(:filmography, {:class_name =>"Movie", :foreign_key =>"director_id" } )
+  has_many(:filmography, {:class_name =>"Movie", :foreign_key =>"director_id" })
+  belongs_to(:movie, {:class_name => "Movie", :foreign_key => "movie_id"})
   
   # def movie
   #   key = self.movie_id
